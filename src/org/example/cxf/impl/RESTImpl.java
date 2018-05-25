@@ -11,7 +11,7 @@ public class RESTImpl implements REST {
 
 	@Override
 	public String get() {
-		return null;
+		return "Get!!!";
 	}
 
 	@Override
