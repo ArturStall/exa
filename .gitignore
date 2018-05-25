@@ -2,7 +2,6 @@
 build/
 target/
 
-.gitignore
 .classpath
 .project
 manifest.mf
