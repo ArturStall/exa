@@ -1,0 +1,7 @@
+.settings/
+build/
+target/
+
+.classpath
+.project
+manifest.mf
