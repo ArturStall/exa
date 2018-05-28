@@ -12,8 +12,8 @@ public class RESTImpl implements REST {
 	}
 
 	@Override
-	public String get(@PathParam("action")String action, @PathParam("idUser")int idUser) {
-		String message = "action + idUser";
+	public String get(String action, int idUser) {
+		String message = new String(action);
 		return message;
 	}
 
