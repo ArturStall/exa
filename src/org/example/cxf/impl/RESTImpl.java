@@ -1,6 +1,15 @@
 package org.example.cxf.impl;
 
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.example.bean.Person;
+import org.example.controller.ListPeople;
 import org.example.cxf.interfaces.REST;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 public class RESTImpl implements REST {
 
@@ -10,23 +19,33 @@ public class RESTImpl implements REST {
 	}
 
 	@Override
+	public String addUser(String body) {
+	    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	    Document doc;
+	    String firstName = null;
+	    String lasstName = null;
+	    Person person;
+		try {		
+			doc = factory.newDocumentBuilder().parse(body);
+			firstName = doc.getElementById("firstName").getNodeValue();
+			lasstName = doc.getElementById("lastName").getNodeValue();
+			
+		} catch (SAXException | IOException | ParserConfigurationException e) {
+			e.printStackTrace();
+		}
+		person = new Person(firstName, lasstName);
+		ListPeople.addPerson(person);
+	    return person.toString();
+	}	
+	
+	@Override
 	public String get(String action, int idUser) {		
-		return action + idUser;
+		return action + " " + idUser;
 	}
 
 	@Override
-	public void add() {
+	public void add(String body, String action, int idUser) {
 				
 	}
-
-	@Override
-	public void replace() {
-				
-	}
-
-	@Override
-	public void delete() {
-				
-	}
-
+	
 }

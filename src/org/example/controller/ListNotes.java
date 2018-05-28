@@ -6,18 +6,18 @@ import java.util.List;
 import org.example.bean.Note;
 
 public class ListNotes {
-	private List<Note> allNotes = new ArrayList<>();
+	private static List<Note> allNotes = new ArrayList<>();
 	
-	public boolean addNote(Note note) {
+	public static boolean addNote(Note note) {
 		allNotes.add(note);
 		return allNotes.contains(note);		
 	}
 
-	public boolean deleteNote(Note note) {
+	public static boolean deleteNote(Note note) {
 		return allNotes.remove(note);
 	}
 	
-	public List<Note> getNotes() {		
+	public static List<Note> getNotes() {		
 		return allNotes;		
 	}
 	
