@@ -27,8 +27,8 @@ public class RESTImpl implements REST {
 	    Person person;
 		try {		
 			doc = factory.newDocumentBuilder().parse(body);
-			firstName = doc.getElementById("firstName").getNodeValue();
-			lasstName = doc.getElementById("lastName").getNodeValue();
+			firstName = doc.getElementById("1").getNodeValue();
+			lasstName = doc.getElementById("2").getNodeValue();
 			
 		} catch (SAXException | IOException | ParserConfigurationException e) {
 			e.printStackTrace();
