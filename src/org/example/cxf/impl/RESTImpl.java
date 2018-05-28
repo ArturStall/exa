@@ -1,5 +1,8 @@
 package org.example.cxf.impl;
 
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+
 import org.example.cxf.interfaces.REST;
 
 public class RESTImpl implements REST {
@@ -10,7 +13,8 @@ public class RESTImpl implements REST {
 	}
 
 	@Override
-	public String get(String action, int idUser) {
+	@Path("/{action}/{idUser}")
+	public String get(@PathParam("action")String action, @PathParam("idUser")int idUser) {
 		String message = "action + idUser";
 		return message;
 	}
