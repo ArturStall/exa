@@ -11,7 +11,8 @@ public class RESTImpl implements REST {
 
 	@Override
 	public String get(String action, int idUser) {
-		return "Get!!! + ' ' + action + ' ' + idUser";
+		String message = "action + idUser";
+		return message;
 	}
 
 	@Override
