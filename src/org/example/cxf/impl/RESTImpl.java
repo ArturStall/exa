@@ -1,7 +1,5 @@
 package org.example.cxf.impl;
 
-import javax.ws.rs.PathParam;
-
 import org.example.cxf.interfaces.REST;
 
 public class RESTImpl implements REST {
@@ -12,9 +10,8 @@ public class RESTImpl implements REST {
 	}
 
 	@Override
-	public String get(String action, int idUser) {
-		String message = new String(action);
-		return message;
+	public String get(String action, int idUser) {		
+		return action + idUser;
 	}
 
 	@Override
