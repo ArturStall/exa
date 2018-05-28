@@ -22,7 +22,7 @@ public class RESTImpl implements REST {
 	public String addUser(String body) {
 	    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	    Document doc;
-	    String firstName = null;
+	    String firstName = "Bla";
 	    String lasstName = null;
 	    Person person;
 		try {		
