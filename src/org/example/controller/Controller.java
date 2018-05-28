@@ -6,6 +6,10 @@ public class Controller {
 		
 	}
 	
+	void getNote() {
+		
+	}
+	
 	void deleteNote() {
 		
 	}

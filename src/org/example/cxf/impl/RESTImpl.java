@@ -10,8 +10,8 @@ public class RESTImpl implements REST {
 	}
 
 	@Override
-	public String get() {
-		return "Get!!!";
+	public String get(String action, int idUser) {
+		return "Get!!! + ' ' + action + ' ' + idUser";
 	}
 
 	@Override
