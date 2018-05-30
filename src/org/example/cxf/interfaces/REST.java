@@ -1,6 +1,5 @@
 package org.example.cxf.interfaces;
 
-
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -17,10 +16,10 @@ public interface REST {
 	
 	@GET
 	@Path("/{action}/{idUser}")
-	public String get(@PathParam("action")String action, @PathParam("idUser")int idUser);
+	public String get(@PathParam("action")String action, @PathParam("idUser")String idUser);
 	
 	@POST
 	@Path("/{action}/{idUser}")
-	public void add(String body, @PathParam("action")String action, @PathParam("idUser")int idUser);
+	public boolean add(String body, @PathParam("action")String action, @PathParam("idUser")String idUser);
 	
 }

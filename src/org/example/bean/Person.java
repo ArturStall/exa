@@ -1,33 +1,38 @@
 package org.example.bean;
 
+import java.util.UUID;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Person {
-	private int id;
+	private String id;
 	private String firstName;
 	private String lastName;
+	private String login;
+	private String password;
 
 	public Person() {
 		super();
 	}
 
-	public Person(String firstName, String lastName) {
+	public Person(String firstName, String lastName, String login, String password) {
 		super();
-		this.id = this.hashCode();
+		this.id = UUID.randomUUID().toString();
 		this.firstName = firstName;
 		this.lastName = lastName;
-	}
+		this.login = login;
+		this.password = password;
+	}	
 
-	public int getId() {
+	public String getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {
 		return firstName;
 	}
-
+	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -35,47 +40,30 @@ public class Person {
 	public String getLastName() {
 		return lastName;
 	}
-
+	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}	
+	}
+
+	public String getLogin() {
+		return login;
+	}
+	
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", login=" + login
+				+ ", password=" + password + "]";
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Person other = (Person) obj;
-		if (firstName == null) {
-			if (other.firstName != null)
-				return false;
-		} else if (!firstName.equals(other.firstName))
-			return false;
-		if (id != other.id)
-			return false;
-		if (lastName == null) {
-			if (other.lastName != null)
-				return false;
-		} else if (!lastName.equals(other.lastName))
-			return false;
-		return true;
-	}
-
 }
